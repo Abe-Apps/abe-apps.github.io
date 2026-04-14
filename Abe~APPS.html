@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abe~Apps</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: whitesmoke;
+            font-family: Arial, sans-serif;
+            text-align: center; /* Centers the content below the header */
+        }
+        
+        .body-header {
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 5px solid red;
+        }
+        
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            background-color: green;
+            padding: 5px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        h1 { margin: 0; }
+
+        h4 {
+            font-weight: normal;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+        
+        /* Style for the Install Button */
+        .install-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .install-btn:hover { background-color: #0056b3; }
+
+        /* Style for the Admin Upload Section */
+        .admin-section {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 400px;
+            border: 2px dashed #333;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        .upload-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .upload-btn:hover { background-color: #218838; }
+
+    </style>
+</head>
+<body>
+
+    <header class="body-header">
+        <div class="title-container">
+            <div class="header-main">
+                <span class="logo">A~A</span>
+                <h1>Abenezer Applications</h1>
+            </div>
+            <h4>
+                This Website is used for installing Applications made<br>
+                by: Abenezer
+            </h4>
+        </div>
+    </header>
+
+    <a href="myapp.apk" class="install-btn" download>Install Now</a>
+
+    <div class="admin-section">
+        <h3>Admin Panel</h3>
+        <p style="font-size: 12px; color: #666;">this is for Developer only</p>
+        <input type="file" id="appFile" accept=".apk,.exe,.zip">
+        <br>
+        <button class="upload-btn" onclick="uploadApp()">Upload to Server</button>
+    </div>
+
+    <script>
+        function uploadApp() {
+            const fileInput = document.getElementById('appFile');
+            if (fileInput.files.length === 0) {
+                alert("Please select a file first!");
+            } else {
+                alert("File '" + fileInput.files[0].name + "' selected. \n\nNote: To actually save this file, you will need a backend server (Node.js/PHP).");
+            }
+        }
+    </script>
+
+</body>
+</html>
